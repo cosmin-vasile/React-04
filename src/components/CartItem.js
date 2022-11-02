@@ -1,16 +1,16 @@
 import React, { Component } from "react";
 
 export default class CartItem extends Component {
+  componentWillUnmount() {
+    console.log("componentWillUnmount");
+  }
+
   getCounterClasses = () => {
     let classes = "badge m-2 bg-";
     const { count } = this.props;
     classes += count === 0 ? "warning" : "info";
     return classes;
   };
-
-  componentDidUpdate() {
-    console.log("componentDidUpdate");
-  }
 
   render() {
     const { children, handleDecrement, handleIncrement, count } = this.props;

@@ -26,6 +26,21 @@ export default class Cart extends Component {
     ],
   };
 
+  constructor() {
+    super();
+    console.log("constructor");
+  }
+
+  componentDidMount() {
+    console.log("componentDidMount");
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    console.log(prevState);
+    console.log(this.state);
+    console.log("componentDidUpdate");
+  }
+
   handleIncrement = (id) => {
     const { counts, total } = this.state;
     const newCount = counts[id] ? ++counts[id] : 1;
