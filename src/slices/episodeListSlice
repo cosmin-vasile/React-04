@@ -1,0 +1,21 @@
+import { createSlice } from "@reduxjs/toolkit";
+
+export const episodeListSlice = createSlice({
+  name: "episode-list",
+  initialState: {
+    list: [],
+  },
+  reducers: {
+    setList: (state, action) => {
+      state.list = action.payload;
+    },
+    clearList: (state) => {
+      state.list = [];
+    },
+  },
+});
+
+// Action creators are generated for each case reducer function
+export const { setList, clearList } = episodeListSlice.actions;
+
+export default episodeListSlice.reducer;

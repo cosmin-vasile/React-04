@@ -1,12 +1,18 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import routes from "./routes";
-import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter } from "react-router-dom";
+import { Provider } from "react-redux";
+import reportWebVitals from "./reportWebVitals";
+import routes from "./routes";
+import store from "./store";
 import "./index.css";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<BrowserRouter>{routes}</BrowserRouter>);
+root.render(
+  <Provider store={store}>
+    <BrowserRouter>{routes}</BrowserRouter>
+  </Provider>
+);
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))

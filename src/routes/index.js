@@ -3,6 +3,7 @@ import App from "../components/App";
 import Home from "../components/Home";
 import Register from "../components/Register";
 import Login from "../components/Login";
+import Episode from "../components/Episode";
 
 export default (
   <Routes>
@@ -10,6 +11,8 @@ export default (
       <Route path="/" element={<Home />} />
       <Route path="/register" element={<Register />} />
       <Route path="/login" element={<Login />} />
+      {/* <Route path="/episodes" element={<EpisodeList />} /> */}
+      <Route path="/episode/:episodeId" element={<Episode />} />
     </Route>
   </Routes>
 );
