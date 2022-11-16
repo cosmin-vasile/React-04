@@ -1,0 +1,21 @@
+const express = require("express");
+const router = express.Router();
+const storage = require("node-persist");
+
+router.post("/", async function (req, res) {
+  console.log("query", req.query);
+  console.log("body", req.body);
+  //register first name, last name, email, password
+  //let users = await storage.getItem('users')
+  //users.find(); - search for email
+  //if exists - return success: false with message
+  //users.push({firstName: '', lastName: '', email: '', password: '',});
+  //await storage.setItem("users", users);
+
+  res.json({
+    success: true,
+    message: "Email or password is incorrect!",
+  });
+});
+
+module.exports = router;

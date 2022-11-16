@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 const Home = () => {
@@ -10,6 +10,30 @@ const Home = () => {
     const episodeId = 4;
     navigate(`/episode/${episodeId}`);
   };
+
+  useEffect(() => {
+    fetch("http://localhost:8080/api/login", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        email: "cosmin.vasile@scoalainformala.ro",
+        password: "Password123#",
+      }),
+    }).then(() => {
+      fetch("http://localhost:8080/api/register", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          email: "cosmin.vasile@scoalainformala.ro",
+          password: "asdPassword123#",
+        }),
+      });
+    });
+  }, []);
 
   return (
     <div>
